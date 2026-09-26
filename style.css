@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-background-color: #cdb4db;
+    --secondary-background-color: #ffc8dd;
+    --tert-background-color: #bde0fe
+}
+
+body {
+    background-color: var(--primary-background-color) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+main {
+    background-color: var(--secondary-background-color);
+    width: 70%;
+    height: 70%;
+    min-width: 400px;
+    min-height: 500px;
+    border-radius: 20px;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    box-shadow: 1px 0px 49px 0px rgba(0, 0, 0, 0.62);
+    -webkit-box-shadow: 1px 0px 49px 0px rgba(0, 0, 0, 0.62);
+    -moz-box-shadow: 1px 0px 49px 0px rgba(0, 0, 0, 0.62);
+
+    .todo-container {
+        flex: 1;
+        width: 100%;
+        padding-left: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .Todo {
+            display: flex;
+            width: 100%;
+            background-color: var(--tert-background-color);
+            margin-bottom: 7px;
+            justify-content: space-between;
+            padding: 5px;
+            border-radius: 10px;
+            height: 60px;
+        }
+
+        .btn-container {
+            width: 230px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        p {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+
+            width: 22px;
+            height: 22px;
+
+            border: 2px solid #8e6aa8;
+            border-radius: 6px;
+
+            background-color: #fff;
+            cursor: pointer;
+
+            display: grid;
+            place-content: center;
+
+            transition: 0.15s ease;
+        }
+
+        .checkbox::before {
+            content: "✓";
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+
+            transform: scale(0);
+            transition: 0.15s ease;
+        }
+
+        .checkbox:checked {
+            background-color: #8e6aa8;
+            border-color: #8e6aa8;
+        }
+
+        .checkbox:checked::before {
+            transform: scale(1);
+        }
+
+        .checkbox:hover {
+            border-color: #6f4f87;
+        }
+
+        .checkbox:focus-visible {
+            outline: 3px solid rgba(142, 106, 168, 0.35);
+            outline-offset: 2px;
+        }
+    }
+}
